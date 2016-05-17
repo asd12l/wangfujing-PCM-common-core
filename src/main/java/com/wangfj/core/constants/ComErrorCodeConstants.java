@@ -229,7 +229,7 @@ public class ComErrorCodeConstants {
         "00111102", "吊牌价参数只能为整数数字或小数数字"), SUPPLIER_PCM_SALEPRICE_ISNULL("00111103", "零售价参数不能为空"), SUPPLIER_PCM_SALEPRICE_ERROR(
         "00111104", "零售价参数只能为整数数字或小数数字"), SAPERP_PCM_ERROR_UPDATESHOPPRODUCT("00111105", "修改专柜商品失败"), SAPERP_PCM_ERROR_BRANDCODE1(
         "00111106", "品牌编码不能为空"), SAPERP_PCM_ERROR_TYPE1("00111107", "业态类型标识参数应为数字[0.百货1.超市2.电商]"), SAPERP_PCM_ERROR_INVENTORY1(
-        "00111108", "期初库存参数只能为数字"), PIS_PCM_TYPE_ISERROR("00111108", "业态应为数字[0.百货1.超市]"),
+        "00111108", "期初库存参数只能为数字"), PIS_PCM_TYPE_ISERROR("00111109", "业态应为数字[0.百货1.超市]"),
     /* 行政区域 112 王选 */
     REGION_NAME_EXIST("00112000", "行政区域名称已存在！"), REGION_CODE_EXIST("00112001", "邮编已存在！"), REGION_INNER_CODE_EXIST(
         "00112002", "行政区域编码已存在！"),

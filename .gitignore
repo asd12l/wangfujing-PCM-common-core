@@ -5,3 +5,6 @@
 log/
 logs/
 target/
+bin/
+.idea/
+*.iml

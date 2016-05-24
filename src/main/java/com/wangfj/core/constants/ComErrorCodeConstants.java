@@ -257,7 +257,7 @@ public class ComErrorCodeConstants {
         "00300030", "时间格式不正确！"), PRICE_GT_LING("00300031", "非赠品商品价格必须大于0"), TAG_PRICE_STOCK_SKU_IS_NULL(
         "00300031", "查询结果为空，请确认SKU是否有效"), PRICE_BEGIN_END_FAILED("00300032", "变价开始时间应小于结束时间"), PRICE_BDATE_IS_NULL(
         "00300033", "开始日期不能为空"), PRICE_EDATE_IS_NULL("00300034", "结束日期不能为空"), PRICE_BEGIN_CURDATE_FAILED(
-        "00300035", "变价只允许做预变价"),
+        "00300035", "变价只允许做预变价"),PRICE_PRODUCT_NOT_EXIST("00300036", "商品不存在价格信息"),
 
     /* 库存管理 301 孔庆富 */
     STOCK_OUTOFSTOCK_ERROR("00301101", "锁定数量大于可售库存数量"), STOCK_LOCK_SUCCEED("00301102", "锁库成功"), STOCK_LOCK_FAILED_ERROR(

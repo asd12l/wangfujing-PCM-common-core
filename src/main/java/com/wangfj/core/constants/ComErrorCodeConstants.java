@@ -229,7 +229,10 @@ public class ComErrorCodeConstants {
         "00111102", "吊牌价参数只能为整数数字或小数数字"), SUPPLIER_PCM_SALEPRICE_ISNULL("00111103", "零售价参数不能为空"), SUPPLIER_PCM_SALEPRICE_ERROR(
         "00111104", "零售价参数只能为整数数字或小数数字"), SAPERP_PCM_ERROR_UPDATESHOPPRODUCT("00111105", "修改专柜商品失败"), SAPERP_PCM_ERROR_BRANDCODE1(
         "00111106", "品牌编码不能为空"), SAPERP_PCM_ERROR_TYPE1("00111107", "业态类型标识参数应为数字[0.百货1.超市2.电商]"), SAPERP_PCM_ERROR_INVENTORY1(
-        "00111108", "期初库存参数只能为数字"), PIS_PCM_TYPE_ISERROR("00111109", "业态应为数字[0.百货1.超市]"),
+        "00111108", "期初库存参数只能为数字"), PIS_PCM_TYPE_ISERROR("00111109", "业态应为数字[0.百货1.超市]"),SAPERP_PCM_ERROR_BASEUNITCODE(
+        "00111110", "基本计量单位不能为空"),SAPERP_PCM_ERROR_SAPPROTYPE("00111111","电商商品类型不能为空"),SAPERP_PCM_ERROR_SAPPRODESC("00111112","电商商品描述不能为空"),
+         SAPERP_PCM_ERROR_SAPSTANDARDBARCODE("00111113","供应商条码/国标码不能为空"),SAPERP_PCM_ERROR_COLORCODE("00111114","色码不能为空"),SAPERP_PCM_ERROR_ZZCOLORCODE("00111115","颜色码不能为空"),
+         SAPERP_PCM_ERROR_ZZSIZECODE("00111116","尺寸码不能为空"),
     /* 行政区域 112 王选 */
     REGION_NAME_EXIST("00112000", "行政区域名称已存在！"), REGION_CODE_EXIST("00112001", "邮编已存在！"), REGION_INNER_CODE_EXIST(
         "00112002", "行政区域编码已存在！"),
@@ -257,7 +260,7 @@ public class ComErrorCodeConstants {
         "00300030", "时间格式不正确！"), PRICE_GT_LING("00300031", "非赠品商品价格必须大于0"), TAG_PRICE_STOCK_SKU_IS_NULL(
         "00300031", "查询结果为空，请确认SKU是否有效"), PRICE_BEGIN_END_FAILED("00300032", "变价开始时间应小于结束时间"), PRICE_BDATE_IS_NULL(
         "00300033", "开始日期不能为空"), PRICE_EDATE_IS_NULL("00300034", "结束日期不能为空"), PRICE_BEGIN_CURDATE_FAILED(
-        "00300035", "变价只允许做预变价"),
+        "00300035", "变价只允许做预变价"),PRICE_PRODUCT_NOT_EXIST("00300036", "商品不存在价格信息"),
 
     /* 库存管理 301 孔庆富 */
     STOCK_OUTOFSTOCK_ERROR("00301101", "锁定数量大于可售库存数量"), STOCK_LOCK_SUCCEED("00301102", "锁库成功"), STOCK_LOCK_FAILED_ERROR(

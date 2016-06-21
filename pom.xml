@@ -16,9 +16,9 @@
 		<mybatis.version>3.0.6</mybatis.version>
 		<mybatis-spring.version>1.0.2</mybatis-spring.version>
 		<freemarker-version>2.3.19</freemarker-version>
-		<spring-version>3.2.3.RELEASE</spring-version>
+		<spring-version>3.1.2.RELEASE</spring-version>
 		<dependency.wfj.platform-utils.version>1.0.3.RELEASE</dependency.wfj.platform-utils.version>
-    	<dependency.lettuce.version>3.4.1.Final</dependency.lettuce.version>
+		<dependency.lettuce.version>3.4.1.Final</dependency.lettuce.version>
 	</properties>
 
 
@@ -75,7 +75,7 @@
 			<artifactId>commons-httpclient</artifactId>
 			<version>3.1</version>
 		</dependency>
-		<!-- <dependency>
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
@@ -85,16 +85,16 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.0</version>
-		</dependency> -->
+		</dependency>
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 			<version>3.0.0.1</version>
 		</dependency>
 		<dependency>
-		  <groupId>org.apache.commons</groupId>
-		  <artifactId>commons-pool2</artifactId>
-		  <version>2.4.2</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+			<version>2.4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -227,25 +227,17 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.6</version>
 		</dependency>
-		<!-- <dependency>
-		  <groupId>com.wfj.exception.client</groupId>
-		  <artifactId>exception-client-framework</artifactId>
-		  <version>1.1.4.RELEASE</version>
-		  <exclusions>
-		  	<exclusion>
-		  		<artifactId>slf4j-log4j12</artifactId>
-		  		<groupId>org.slf4j</groupId>
-		  	</exclusion>
-		  </exclusions>
-		</dependency> -->
+		<!-- <dependency> <groupId>com.wfj.exception.client</groupId> <artifactId>exception-client-framework</artifactId> 
+			<version>1.1.4.RELEASE</version> <exclusions> <exclusion> <artifactId>slf4j-log4j12</artifactId> 
+			<groupId>org.slf4j</groupId> </exclusion> </exclusions> </dependency> -->
 		<dependency>
 			<groupId>com.wfj.ea</groupId>
 			<artifactId>client</artifactId>
 			<version>1.0.4.RELEASE</version>
 		</dependency>
-		<dependency> 
+		<dependency>
 			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>  
+			<artifactId>fastjson</artifactId>
 			<version>1.1.28</version>
 		</dependency>
 		<dependency>
@@ -259,31 +251,31 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.axis</groupId>
 			<artifactId>axis</artifactId>
 			<version>1.4</version>
 		</dependency>
 		<dependency>
-		  <groupId>org.apache.zookeeper</groupId>
-		  <artifactId>zookeeper</artifactId>
-		  <version>3.5.0-alpha</version>
-		  <exclusions>
-		  	<exclusion>
-		  		<artifactId>log4j</artifactId>
-		  		<groupId>log4j</groupId>
-		  	</exclusion>
-		  	<exclusion>
-		  		<artifactId>slf4j-log4j12</artifactId>
-		  		<groupId>org.slf4j</groupId>
-		  	</exclusion>
-		  </exclusions>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.5.0-alpha</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>log4j</artifactId>
+					<groupId>log4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
-		  <groupId>com.wangfj</groupId>
-		  <artifactId>MQClient</artifactId>
-		  <version>2.0</version>
+			<groupId>com.wangfj</groupId>
+			<artifactId>MQClient</artifactId>
+			<version>2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.caucho</groupId>
@@ -291,34 +283,34 @@
 			<version>4.0.7</version>
 		</dependency>
 		<dependency>
-		  <groupId>com.wfj.netty</groupId>
-		  <artifactId>netty-wfj-base</artifactId>
-		  <version>2.1.2.RELEASE</version>
-		  <exclusions>
-					<exclusion>
-						<artifactId>slf4j-log4j12</artifactId>
-						<groupId>org.slf4j</groupId>
-					</exclusion>
-		  </exclusions>
+			<groupId>com.wfj.netty</groupId>
+			<artifactId>netty-wfj-base</artifactId>
+			<version>1.3.3.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
-		    <groupId>biz.paluch.redis</groupId>
-		    <artifactId>lettuce</artifactId>
-		    <version>${dependency.lettuce.version}</version>
-		    <scope>compile</scope>
+			<groupId>biz.paluch.redis</groupId>
+			<artifactId>lettuce</artifactId>
+			<version>${dependency.lettuce.version}</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
-		    <groupId>com.wfj.platform</groupId>
-		    <artifactId>redis-cluster-cache</artifactId>
-		    <version>${dependency.wfj.platform-utils.version}</version>
-		    <scope>compile</scope>
+			<groupId>com.wfj.platform</groupId>
+			<artifactId>redis-cluster-cache</artifactId>
+			<version>${dependency.wfj.platform-utils.version}</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
-		    <groupId>com.wfj.platform</groupId>
-		    <artifactId>platform-base-util</artifactId>
-		    <version>${dependency.wfj.platform-utils.version}</version>
-		    <scope>compile</scope>
+			<groupId>com.wfj.platform</groupId>
+			<artifactId>platform-base-util</artifactId>
+			<version>${dependency.wfj.platform-utils.version}</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 	<build>

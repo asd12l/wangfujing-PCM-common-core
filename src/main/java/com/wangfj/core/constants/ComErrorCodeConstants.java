@@ -162,7 +162,7 @@ public class ComErrorCodeConstants {
     CONTRACT_UPLOAD_ERROR("00110001", "上传要约信息错误"), CONTRACT_IS_EXIST("00110002", "合同号已存在"), CONTRACT_VALID_ERROR(
         "00110003", "合同信息校验有误"), CONTRACT_IS_NULL("00110004", "合同不存在"), CONTRACT_RESULT_NULL_ERROR(
         "00110005", "未查询到对应电商合同"), CONTRACT_UPDATE_ERROR("00110006", "修改合同信息失败"), CONTRACT_MANGERTYPE_ERROR(
-        "00110007", "要约与供应商经营方式不一致"),
+        "00110007", "要约与供应商经营方式不一致"),CONTRACT_SUPPLYINFO_NULL("00110008", "供应商不存在"),CONTRACT_CATEGORY_GL_NULL("00110008", "管理分类不存在"),
 
     /* spu、sku、专柜商品添加 111 叶东 */
     ADD_PRODUCT_SUCCESS("00111001", "添加产品成功"), ADD_PRODUCT_ERROR("00111002", "创建SPU失败"), UPDATE_PRODUCTCODE_ERROR(

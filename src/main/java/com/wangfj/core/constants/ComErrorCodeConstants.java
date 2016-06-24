@@ -279,7 +279,9 @@ public class ComErrorCodeConstants {
         "00301125", "保存异常信息失败"), STOCK_SHOPPEPROSID_NOT_SALE("00301126", "专柜商品不可售"), STOCK_SHOPPEPROSID_NOT_SALESTOCK(
         "00301127", "专柜商品无可售库存"), STOCK_IMPORT_LOCKSUM_ERROR("00301128", "全量库存不能小于锁库数量"), STOCK_IMPORT_PUSH_ERROR(
         "00301129", "库存下发失败"), STOCK_IMPORT_TPYEALL_ERROR("00301130", "全量库存不允许导负库存"), STOCK_IMPORT_NEGATIVE_FAILED(
-        "00301131", "可售库存不能小于0"), SKU_NOT_SALE("00301132", "商品不可售"),STOCK_TYPE_IS_ERROR("00301133", "库位操作类型为空或不正确"),
+        "00301131", "可售库存不能小于0"), SKU_NOT_SALE("00301132", "商品不可售"),NOT_ZK(
+        "00301133", "专柜商品为非自库商品"), NOT_XXHC("00301134", "专柜商品非先销后采商品"), NOT_ASSOCIATED(
+        "00301135", "专柜商品非联营商品"),STOCK_TYPE_IS_ERROR("00301136", "库位操作类型为空或不正确"),
     /* 商品图片 302 孔庆富 */
     PICTURE_PRODUCTCODE_IS_NULL("00302021", "商品编码不能为空"), PICTURE_PHOTOCODE_IS_NULL("00302022",
         "照片编码不能为空"), PICTURE_URL_IS_NULL("00302023", "商品图片URL不能为空"), PICTURE_NUMBER_IS_NULL(

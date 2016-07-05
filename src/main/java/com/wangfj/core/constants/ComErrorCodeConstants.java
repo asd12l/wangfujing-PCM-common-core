@@ -84,7 +84,7 @@ public class ComErrorCodeConstants {
         "00104041", "专柜类型为大码专柜"), DISCOUNTCODE_INFO_ERROR_COUNTERCODE("00104042",
         "扣率码所在专柜与上传专柜信息不一致"), DISCOUNTCODE_INFO_ERROR_SUPPLIER("00104043", "扣率码对应供应商与上传供应商信息不一致"), SKU_IS_EXIST1(
         "00104044", "所传色系已对应不同色码，请确认所传商品信息的色系与色码关系正确性"), BARCODE_IS_NO_EXIST("00104045", "条码不存在"),
-
+         SHOPP_NOT_EXIST("00104046", "专柜商品不存在，无法修改信息"),
     /* 销售渠道 105 张学祎 */
     CHANNEL_EXIST("00105034", "销售渠道名称或编码已经存在"), CHANNEL_SID_IS_NULL("00105035", "销售渠道sid不能为空"), CHANNEL_CHANNELNAME_EXIST(
         "00105036", "销售渠道名称已经存在"), CHANNEL_CHANNELCODE_EXIST("00105037", "销售渠道编码已经存在"),
@@ -233,7 +233,7 @@ public class ComErrorCodeConstants {
         "00111110", "基本计量单位不能为空"),SAPERP_PCM_ERROR_SAPPROTYPE("00111111","商品类型不能为空"),SAPERP_PCM_ERROR_SAPPRODESC("00111112","商品名称不能为空"),
         SAPERP_PCM_ERROR_SAPSTANDARDBARCODE("00111113","供应商条码/国标码不能为空"),SAPERP_PCM_ERROR_COLORCODE("00111114","色码不能为空"),SAPERP_PCM_ERROR_ZZCOLORCODE("00111115","特性颜色码不能为空"),
         SAPERP_PCM_ERROR_ZZSIZECODE("00111116","特性尺寸码不能为空"),SAPERP_PCM_ERROR_ORIGINCOUNTRY("00111117","原产国不能为空"),SAPERP_PCM_ERROR_FIELD("00111118","统比销不能为空"),SAPERP_PCM_ERROR_ISCOD("00111119","货到付款参数不能为空"),
-        SAPERP_PCM_ERROR_ISORIGINPACKAGE("00111120","是否原厂包装字段不能为空"),SAPERP_PCM_ERROR_SHOPERROR("00111121","未查询到对应专柜,请确认供应商与门店关系!"),
+        SAPERP_PCM_ERROR_ISORIGINPACKAGE("00111120","是否原厂包装字段不能为空"),SAPERP_PCM_ERROR_SHOPERROR("00111121","未查询到对应专柜,请确认供应商与门店关系!"),SAPERP_PRODUCT_SUPPLY_EXIST("00111122","该专柜商品已存在对应供应商"),
     /* 行政区域 112 王选 */
     REGION_NAME_EXIST("00112000", "行政区域名称已存在！"), REGION_CODE_EXIST("00112001", "邮编已存在！"), REGION_INNER_CODE_EXIST(
         "00112002", "行政区域编码已存在！"),

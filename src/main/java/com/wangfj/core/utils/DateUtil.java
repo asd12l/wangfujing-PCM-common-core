@@ -110,7 +110,6 @@ public class DateUtil {
 			try {
 				date = sdf.parse(time);
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -126,7 +125,6 @@ public class DateUtil {
 				date = sdf.parse(time);
 				time = sdf.format(date);
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

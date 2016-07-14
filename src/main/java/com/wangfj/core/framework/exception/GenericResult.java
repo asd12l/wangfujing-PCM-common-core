@@ -3,7 +3,7 @@
  * @Path: com.bailian.core.framework.exceptionGenericResult.java
  * @Create By wangfei
  * @Create In 2014年9月28日 下午4:49:13
- * TODO
+ *
  */
 package com.wangfj.core.framework.exception;
 

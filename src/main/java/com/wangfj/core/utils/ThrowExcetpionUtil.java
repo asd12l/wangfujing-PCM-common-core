@@ -3,7 +3,7 @@
  * @Path: com.wangfj.core.utilsSplitUtil.java
  * @Create By kong
  * @Create In 2015年10月27日 下午12:10:15
- * TODO
+ *
  */
 package com.wangfj.core.utils;
 
@@ -27,7 +27,6 @@ public class ThrowExcetpionUtil {
 			boolean flag = ErrorCodeConstants.ErrorCode.vaildErrorCode(e.getCode());
 			throw new MyExceptionHandler(strArr[0], ExcptionTypeCode.getErrorCodeName(strArr[0]), strArr[1], ((BleException) e).getMessage(), e, flag?ErrorLevel.ERROR.getCode():ErrorLevel.WARING.getCode());
 		} catch (MyExceptionHandler e1) {
-			// TODO Auto-generated catch block
 //			e1.printStackTrace();
 		}
 	}

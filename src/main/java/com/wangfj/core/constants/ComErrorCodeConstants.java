@@ -290,7 +290,10 @@ public class ComErrorCodeConstants {
         "00302028", "是否缩略图非数字"), PICTURE_SAVE_SUCCEED("00302029", "图片保存成功"), PICTURE_SAVE_FAILED(
         "00302010", "图片保存失败"), PICTURE_COLORCODE_IS_NULL("00302011", "色系不能为空"), PICTURE_TYPE_IS_NULL(
         "00302012", "是否二次拍照不能为空"), PICTURE_PHOTONAME_IS_NULL("00302013", "图片名称不能为空"), PICTURE_NOT_ONLY(
-        "00302014", "图片已存在");
+        "00302014", "图片已存在"),
+
+      /* Redis异常 303*/
+      REDIS_NOT_WORK("00303001", "Redis服务器连接不上，Redis已经宕机或者其他未知原因。");
 
     private String errorCode;
     private String memo;

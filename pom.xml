@@ -316,6 +316,22 @@
 			<version>${dependency.wfj.platform-utils.version}</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>apache-cxf</artifactId>
+			<version>3.1.2</version>
+			<type>pom</type>
+			<exclusions>
+		       <exclusion> 
+		          <groupId>org.slf4j</groupId>
+		          <artifactId>slf4j-jdk14</artifactId>
+		       </exclusion>
+		       <exclusion> 
+		          <groupId>log4j</groupId>
+		          <artifactId>log4j</artifactId>
+		      </exclusion>
+		    </exclusions> 
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

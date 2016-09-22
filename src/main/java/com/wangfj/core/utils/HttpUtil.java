@@ -215,61 +215,61 @@ public class HttpUtil {
 		return res;
 	}
 
-    /**
-     * 发送Get请求工具方法,处理参数有中文字符
-     *
-     * @Methods Name HttpGet
-     * @Create In Dec 30, 2014 By songw
-     * @param url
-     * @param method
-     * @param paramMap
-     * @return String
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static String HttpGetByUtfNoMenthod(String url, String method, Map paramMap) {
-        // 设置编码格式
-        String encoding = "UTF-8";
-        String webUrl = url + "/" + method;
-        if (StringUtils.isEmpty(method)){
-            webUrl = url;
-        }
-        if (encoding == null || "".equals(encoding))
-            encoding = "UTF-8";
-        String queryString = createLinkString(paramMap);
-        webUrl = webUrl + "?" + queryString;
-        StringBuffer sBuffer = new StringBuffer();
+	/**
+	 * 发送Get请求工具方法,处理参数有中文字符
+	 *
+	 * @Methods Name HttpGet
+	 * @Create In Dec 30, 2014 By songw
+	 * @param url
+	 * @param method
+	 * @param paramMap
+	 * @return String
+	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static String HttpGetByUtfNoMenthod(String url, String method, Map paramMap) {
+		// 设置编码格式
+		String encoding = "UTF-8";
+		String webUrl = url + "/" + method;
+		if (StringUtils.isEmpty(method)) {
+			webUrl = url;
+		}
+		if (encoding == null || "".equals(encoding))
+			encoding = "UTF-8";
+		String queryString = createLinkString(paramMap);
+		webUrl = webUrl + "?" + queryString;
+		StringBuffer sBuffer = new StringBuffer();
 
-        HttpClient httpClient = new HttpClient();
-        GetMethod gettMethod = null;
-        // httpClient.set
-        try {
-            URI uri = new URI(webUrl, false, encoding);
-            gettMethod = new GetMethod(uri.toString());
-            gettMethod.setRequestHeader("Connection", "close");
-            gettMethod.setRequestHeader("Content-type", "text/html;charset=utf-8");
-            gettMethod.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, encoding);
-            httpClient.getHttpConnectionManager().getParams().setConnectionTimeout(5000); // 连接5秒超时
-            httpClient.getHttpConnectionManager().getParams().setSoTimeout(30000);// 读取30秒超时
-            // 执行getMethod
-            int statusCode = httpClient.executeMethod(gettMethod);
-            if (statusCode != HttpStatus.SC_OK) {
-                System.err.println("Method failed: " + gettMethod.getStatusLine());
-                sBuffer = new StringBuffer();
-            } else {
-                sBuffer = new StringBuffer(gettMethod.getResponseBodyAsString() + "");
-            }
-        } catch (Exception e) {
-            LOGGER.error("HttpGetByUtf url is {},method is {},paramMap is {},exception is {}",
-                    new Object[] { url, method, paramMap, e.getMessage() });
-        } finally {
-            // 释放连接
-            gettMethod.releaseConnection();
-        }
-        String res = sBuffer.toString();
-        LOGGER.debug("url is {},method is {},paramMap is {},response is {}",
-                new Object[] { url, method, paramMap, res });
-        return res;
-    }
+		HttpClient httpClient = new HttpClient();
+		GetMethod gettMethod = null;
+		// httpClient.set
+		try {
+			URI uri = new URI(webUrl, false, encoding);
+			gettMethod = new GetMethod(uri.toString());
+			gettMethod.setRequestHeader("Connection", "close");
+			gettMethod.setRequestHeader("Content-type", "text/html;charset=utf-8");
+			gettMethod.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, encoding);
+			httpClient.getHttpConnectionManager().getParams().setConnectionTimeout(5000); // 连接5秒超时
+			httpClient.getHttpConnectionManager().getParams().setSoTimeout(30000);// 读取30秒超时
+			// 执行getMethod
+			int statusCode = httpClient.executeMethod(gettMethod);
+			if (statusCode != HttpStatus.SC_OK) {
+				System.err.println("Method failed: " + gettMethod.getStatusLine());
+				sBuffer = new StringBuffer();
+			} else {
+				sBuffer = new StringBuffer(gettMethod.getResponseBodyAsString() + "");
+			}
+		} catch (Exception e) {
+			LOGGER.error("HttpGetByUtf url is {},method is {},paramMap is {},exception is {}",
+					new Object[] { url, method, paramMap, e.getMessage() });
+		} finally {
+			// 释放连接
+			gettMethod.releaseConnection();
+		}
+		String res = sBuffer.toString();
+		LOGGER.debug("url is {},method is {},paramMap is {},response is {}",
+				new Object[] { url, method, paramMap, res });
+		return res;
+	}
 
 	/**
 	 * 执行一个HTTP POST请求，返回请求响应的HTML
@@ -289,9 +289,9 @@ public class HttpUtil {
 		// 设置Http Post数据
 		try {
 			method.setRequestBody(json);
-			method.setRequestHeader("Connection", "close");
+			// method.setRequestHeader("Connection", "close");
 			method.setRequestHeader("Content-type", "application/json");
-			HttpClient httpClientNew=new HttpClient();
+			HttpClient httpClientNew = new HttpClient();
 			httpClientNew.getHttpConnectionManager().getParams().setConnectionTimeout(50000); // 连接5秒超时
 			httpClientNew.getHttpConnectionManager().getParams().setSoTimeout(70000);// 读取30秒超时
 			httpClientNew.executeMethod(method);

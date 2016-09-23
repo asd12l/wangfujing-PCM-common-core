@@ -734,6 +734,26 @@ public class RedisUtil {
 		return defaultValue;
 	}
 
+	public String getKey(String key, String defaultValue) {
+		try {
+			return (String) (connectionCluster.get(key) == null ? defaultValue
+					: connectionCluster.get(key));
+		} catch (Exception ex) {
+			logger.error("get error.", ex);
+		}
+		return defaultValue;
+	}
+
+	public boolean setKey(String key, String value, int second) {
+		try {
+			connectionCluster.setex(key, second, value);
+			return true;
+		} catch (Exception ex) {
+			logger.error("set error.", ex);
+		}
+		return false;
+	}
+
 	public boolean del(String key) {
 		if (CacheUtils.cacheFlag) {
 			try {

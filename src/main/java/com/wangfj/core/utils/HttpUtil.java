@@ -23,8 +23,6 @@ import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.alibaba.fastjson.JSON;
-
 import net.sf.json.JSONObject;
 
 /**
@@ -85,7 +83,7 @@ public class HttpUtil {
 			}
 			postMethod.setRequestBody(list.toArray(new NameValuePair[0]));
 		}
-		postMethod.setRequestHeader("Connection", "close");
+		// postMethod.setRequestHeader("Connection", "close");
 		postMethod.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, encoding);
 		try {
 			// 执行getMethod
@@ -141,7 +139,7 @@ public class HttpUtil {
 			gettMethod = new GetMethod(uri.toString());
 
 			gettMethod.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, encoding);
-			gettMethod.setRequestHeader("Connection", "close");
+			// gettMethod.setRequestHeader("Connection", "close");
 			// 执行getMethod
 			int statusCode = httpClient.executeMethod(gettMethod);
 			if (statusCode != HttpStatus.SC_OK) {
@@ -189,7 +187,7 @@ public class HttpUtil {
 		try {
 			URI uri = new URI(webUrl, false, encoding);
 			gettMethod = new GetMethod(uri.toString());
-			gettMethod.setRequestHeader("Connection", "close");
+			// gettMethod.setRequestHeader("Connection", "close");
 			gettMethod.setRequestHeader("Content-type", "text/html;charset=utf-8");
 			gettMethod.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, encoding);
 			httpClient.getHttpConnectionManager().getParams().setConnectionTimeout(5000); // 连接5秒超时
@@ -245,7 +243,7 @@ public class HttpUtil {
 		try {
 			URI uri = new URI(webUrl, false, encoding);
 			gettMethod = new GetMethod(uri.toString());
-			gettMethod.setRequestHeader("Connection", "close");
+			// gettMethod.setRequestHeader("Connection", "close");
 			gettMethod.setRequestHeader("Content-type", "text/html;charset=utf-8");
 			gettMethod.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, encoding);
 			httpClient.getHttpConnectionManager().getParams().setConnectionTimeout(5000); // 连接5秒超时

@@ -3,14 +3,18 @@ package com.wangfj.core.utils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.httpclient.HttpClient;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -60,9 +64,8 @@ public class HttpUtil2 {
 			entity = response.getEntity();
 			responseContent = EntityUtils.toString(entity, "UTF-8");
 			LOGGER.debug("url is {},parajsonjson is {},response is {}",
-					new Object[] { httpPost.getURI(),response.getParams(), responseContent });
+					new Object[] { httpPost.getURI(), response.getParams(), responseContent });
 		} catch (Exception e) {
-			
 		} finally {
 			try {
 				// 关闭连接,释放资源
@@ -77,6 +80,88 @@ public class HttpUtil2 {
 			}
 		}
 		return responseContent;
+	}
+
+	public static String HttpGet(String url, String method, Map paramMap) {
+		LOGGER.debug("HttpGet url is {},method is {},paramMap is {}",
+				new Object[] { url, method, paramMap });
+		// 设置编码格式
+		String encoding = "UTF-8";
+		String webUrl = url;
+		if (StringUtils.isNotEmpty(method)) {
+			webUrl = url + "/" + method;
+		}
+		if (encoding == null || "".equals(encoding))
+			encoding = "UTF-8";
+		String queryString = createLinkString(paramMap);
+		webUrl = webUrl + "?" + queryString;
+		HttpGet httpGet = new HttpGet(webUrl);// 创建get请求
+
+		return sendHttpGet(httpGet);
+	}
+
+	/**
+	 * 发送Get请求
+	 * 
+	 * @param httpGet
+	 * @return
+	 */
+	private static String sendHttpGet(HttpGet httpGet) {
+		CloseableHttpClient httpClient = null;
+		CloseableHttpResponse response = null;
+		HttpEntity entity = null;
+		String responseContent = null;
+		try {
+			// 创建默认的httpClient实例.
+			httpClient = HttpClients.createDefault();
+			httpGet.setConfig(requestConfig);
+			// 执行请求
+			response = httpClient.execute(httpGet);
+			entity = response.getEntity();
+			responseContent = EntityUtils.toString(entity, "UTF-8");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// 关闭连接,释放资源
+				if (response != null) {
+					response.close();
+				}
+				if (httpClient != null) {
+					httpClient.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return responseContent;
+	}
+
+	/**
+	 * 把数组所有元素排序，并按照“参数=参数值”的模式用“&”字符拼接成字符串
+	 * 
+	 * @param params
+	 *            需要排序并参与字符拼接的参数组
+	 * @return 拼接后字符串
+	 */
+	public static String createLinkString(Map<String, String> params) {
+		String prestr = "";
+		if (params != null && params.size() > 0) {
+			List<String> keys = new ArrayList<String>(params.keySet());
+			Collections.sort(keys);
+			for (int i = 0; i < keys.size(); i++) {
+				String key = keys.get(i);
+				String value = params.get(key);
+
+				if (i == keys.size() - 1) {// 拼接时，不包括最后一个&字符
+					prestr = prestr + key + "=" + value;
+				} else {
+					prestr = prestr + key + "=" + value + "&";
+				}
+			}
+		}
+
+		return prestr;
 	}
 
 	/**

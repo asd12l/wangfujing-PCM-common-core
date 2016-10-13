@@ -12,8 +12,11 @@ public class HttpClientUtilTest {
 		map.put("spuCode", "100000006");
 //		String responseContent = HttpClientUtil2.getInstance()
 //				.sendHttpPost("http://10.6.2.48:8046/pcm-outer-sdc/product/getProYeInfoBySpuCode.htm", JsonUtil.getJSONString(map));
-		String response=HttpUtil2.doPost("http://10.6.2.48:8046/pcm-outer-sdc/product/getProYeInfoBySpuCode.htm", JsonUtil.getJSONString(map));
+//		String response=HttpUtil2.doPost("http://10.6.2.48:8046/pcm-outer-sdc/product/getProYeInfoBySpuCode.htm", JsonUtil.getJSONString(map));
 //		String response=HttpUtil.doPost("http://10.6.2.48:8046/pcm-outer-sdc/product/getProYeInfoBySpuCode.htm", JsonUtil.getJSONString(map));
+		
+		String response=HttpUtil2.HttpGet("http://wwww.baidu.com", null, null);
+		
 		System.out.println("reponse content:" + response);
 	}
 }

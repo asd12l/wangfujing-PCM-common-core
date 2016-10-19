@@ -35,12 +35,16 @@ public class HttpUtil2 {
 	}
 
 	public static String doPost(String url, String json) {
+		return doPost(url, json, "application/json");
+	}
+
+	public static String doPost(String url, String json, String contentType) {
 		LOGGER.debug("doPost url is {},parajson is {}", new Object[] { url, json });
 		HttpPost httpPost = new HttpPost(url);// 创建httpPost
 		try {
 			// 设置参数
 			StringEntity stringEntity = new StringEntity(json, "UTF-8");
-			stringEntity.setContentType("application/json");
+			stringEntity.setContentType(contentType);
 			httpPost.setEntity(stringEntity);
 		} catch (Exception e) {
 			LOGGER.error("url is {},parajson is {},Exception is {}",

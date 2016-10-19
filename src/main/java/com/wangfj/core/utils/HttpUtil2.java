@@ -34,42 +34,50 @@ public class HttpUtil2 {
 				.setConnectionRequestTimeout(15000).build();
 	}
 
+	/**
+	 * 执行一个HTTP POST请求
+	 * @Methods Name doPost
+	 * @Create In 2016年10月19日 By kongqf
+	 * @param url 请求的URL地址
+	 * @param json 请求的查询参数,可以为null
+	 * @return String 返回请求响应的HTML
+	 */
 	public static String doPost(String url, String json) {
 		return doPost(url, json, "application/json");
 	}
 
+	/**
+	 * 执行一个HTTP POST请求
+	 * @Methods Name doPost
+	 * @Create In 2016年10月19日 By kongqf
+	 * @param url 请求的URL地址
+	 * @param json 请求的查询参数,可以为null
+	 * @param contentType ContentType
+	 * @return String 返回请求响应的HTML
+	 */
 	public static String doPost(String url, String json, String contentType) {
 		LOGGER.debug("doPost url is {},parajson is {}", new Object[] { url, json });
+		CloseableHttpClient httpClient = null;
+		CloseableHttpResponse response = null;
+		HttpEntity entity = null;
+		String responseContent = null;
 		HttpPost httpPost = new HttpPost(url);// 创建httpPost
 		try {
 			// 设置参数
 			StringEntity stringEntity = new StringEntity(json, "UTF-8");
 			stringEntity.setContentType(contentType);
 			httpPost.setEntity(stringEntity);
-		} catch (Exception e) {
-			LOGGER.error("url is {},parajson is {},Exception is {}",
-					new Object[] { url, json, e.getMessage() });
-		}
-		return sendHttpPost(httpPost);
-	}
-
-	private static String sendHttpPost(HttpPost httpPost) {
-		CloseableHttpClient httpClient = null;
-		CloseableHttpResponse response = null;
-		HttpEntity entity = null;
-		String responseContent = null;
-		try {
-			// 创建默认的httpClient实例.
-			httpClient = HttpClients.createDefault();
 			// 设置请求配置
 			httpPost.setConfig(requestConfig);
+			// 创建默认的httpClient实例.
+			httpClient = HttpClients.createDefault();
 			// 执行请求
 			response = httpClient.execute(httpPost);
 			entity = response.getEntity();
 			responseContent = EntityUtils.toString(entity, "UTF-8");
-			LOGGER.debug("url is {},parajsonjson is {},response is {}",
-					new Object[] { httpPost.getURI(), response.getParams(), responseContent });
 		} catch (Exception e) {
+			LOGGER.error("url is {},parajson is {},Exception is {}",
+					new Object[] { url, json, e.getMessage() });
 		} finally {
 			try {
 				// 关闭连接,释放资源
@@ -83,9 +91,20 @@ public class HttpUtil2 {
 				e.printStackTrace();
 			}
 		}
+		LOGGER.debug("url is {},parajsonjson is {},response is {}",
+				new Object[] { url, json, responseContent });
 		return responseContent;
 	}
 
+	/**
+	 * 发送Get请求工具方法
+	 * @Methods Name HttpGet
+	 * @Create In 2016年10月19日 By kongqf
+	 * @param url
+	 * @param method
+	 * @param paramMap
+	 * @return String
+	 */
 	public static String HttpGet(String url, String method, Map paramMap) {
 		LOGGER.debug("HttpGet url is {},method is {},paramMap is {}",
 				new Object[] { url, method, paramMap });
